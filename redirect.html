@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirect</title>
+    <link rel="stylesheet" href="style.css" />
+    <script>
+        const currentURL = new URL(window.location.href);
+
+        const secondRedirect = new URL(currentURL.searchParams.get('redirect'));
+        secondRedirect.search = currentURL.search;
+        secondRedirect.searchParams.delete('redirect');
+
+        window.location.href = secondRedirect.href;
+    </script>
+</head>
+
+<iFrame src="https://www.lp.nemu.com.br/" width="100%" height="100000px">
+
+</iFrame>
+
+</html>
